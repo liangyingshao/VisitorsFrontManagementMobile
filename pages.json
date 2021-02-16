@@ -2,58 +2,58 @@
 	"pages": [
 		//pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
-			"path": "iuc/index/index",
+			"path": "pages/index/index",
 			"style": {}
 		},
 		{
-			"path": "iuc/index/testEntry",
+			"path": "pages/index/testEntry",
 			"style": {}
 		},
 		{
-			"path":"iuc/profile/profile",
+			"path":"pages/profile/profile",
 			"style": {}
 		},
 		{
-			"path":"iuc/userInfo/userInfo",
+			"path":"pages/userInfo/userInfo",
 			"style": {}
 		},
 		{
-			"path":"iuc/userInfo/modifyRealName",
+			"path":"pages/userInfo/modifyRealName",
 			"style": {}
 		},
 		{
-			"path":"iuc/News/newsList",
+			"path":"pages/News/newsList",
 			"style": {}
 		},
 		{
-			"path":"iuc/News/newsDetail",
+			"path":"pages/News/newsDetail",
 			"style": {}
 		},
 		{
-			"path":"iuc/userInfo/modifyGrade",
+			"path":"pages/userInfo/modifyGrade",
 			"style": {}
 		},
 		{
-			"path":"iuc/userInfo/modifyMobile",
+			"path":"pages/userInfo/modifyMobile",
 			"style": {}
 		},
 		{
-			"path":"iuc/userInfo/modifyEmail",
+			"path":"pages/userInfo/modifyEmail",
 			"style": {}
 		},
 		{
-			"path":"iuc/userInfo/modifyTel",
+			"path":"pages/userInfo/modifyTel",
 			"style": {}
 		},
 		{
-		    "path" : "iuc/bindWeChat/bind",
+		    "path" : "pages/bindWeChat/bind",
 		    "style" : {}
 		},{
-		    "path" : "iuc/bindWeChat/unbind",
+		    "path" : "pages/bindWeChat/unbind",
 		    "style" : {}
 		}
         ,{
-            "path" : "iuc/userInfo/modifyMajor",
+            "path" : "pages/userInfo/modifyMajor",
             "style" : {}
         }
     ],
