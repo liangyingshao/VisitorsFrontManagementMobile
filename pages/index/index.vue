@@ -101,7 +101,7 @@
 				},
 				mine: [{
 						image: "../../static/我的申请.png",
-						text: "我的申请",
+						text: "亲友入校",
 						source: "../roomApplication/v2/myApplication"
 					},
 					{

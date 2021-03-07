@@ -48,7 +48,8 @@
 		{
 		    "path" : "pages/bindWeChat/bind",
 		    "style" : {}
-		},{
+		}
+		,{
 		    "path" : "pages/bindWeChat/unbind",
 		    "style" : {}
 		}
