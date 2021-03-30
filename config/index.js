@@ -18,7 +18,7 @@ let appSetting = {
         title: ""
     },
 	domain: process.env.NODE_ENV === "production" ? window.location.protocol + "//" + window.location.host : "http://47.115.162.144:2034",
-    dashboard: "/iuc/index/index",
+    dashboard: "/pages/index/index",
     ueditor: {
         serverUrl: "/ueditor/process",
         topOffset: 64,

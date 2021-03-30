@@ -14,7 +14,7 @@
 					window.location.href = window.location.protocol + "//" + window.location.host + "/r/RcR21D";
 				} else {
 					uni.navigateTo({
-						url: "iuc/profile/profile"
+						url: "pages/profile/profile"
 					})
 				}
 			}

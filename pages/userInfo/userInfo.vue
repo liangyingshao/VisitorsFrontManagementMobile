@@ -6,7 +6,7 @@
 		</cu-custom>
 		<view class="center_box_bg">
 			<view class="center_menu">
-				<navigator class="menu_item">
+				<navigator class="menu_item" url="./modifyAvatar">
 					<text style="flex:1;">头像</text>
 					<view class="detail-info">
 						<image :src="avatar" mode="aspectFit" class="info-img"></image>

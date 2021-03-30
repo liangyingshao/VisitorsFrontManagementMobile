@@ -1,25 +1,50 @@
 <template>
 	<view>
-		<swiper class="screen-swiper" autoplay="true" indicator-dots="true" indicator-active-color="white" indicator-color="grey"
-		 circular="true">
-			<swiper-item v-for='(item,index) in swiperList' :key='index'>
-				<image :src="item" mode="aspectFit" style="height: 423rpx;"></image>
+		<swiper class="card-swiper round-dot" :indicator-dots="true" :circular="true"
+		 :autoplay="true" interval="5000" duration="500" @change="cardSwiper" indicator-color="#8799a3"
+		 indicator-active-color="#0081ff">
+			<swiper-item v-for="(item,index) in swiperList" :key="index" :class="cardCur==index?'cur':''">
+				<view class="swiper-item">
+					<image :src="item" mode="aspectFill" style="width: 710rpx;"></image>
+				</view>
 			</swiper-item>
 		</swiper>
-		<view class="bg-white flex solids-bottom padding-tb-sm justify-between align-center">
+		<!-- <swiper class="margin-sm card-swiper bg-white" autoplay="true" indicator-dots="true" indicator-active-color="white" indicator-color="grey"
+		 circular="true">
+			<swiper-item v-for='(item,index) in swiperList' :key='index'>
+				<image :src="item" mode="aspectFill" style="width: 100%;" class="radius"></image>
+				<video :src="item" autoplay loop muted :show-play-btn="false" :controls="false" objectFit="cover" v-if="item.type=='video'"></video>
+			</swiper-item>
+		</swiper> -->
+		<view style="height: 100rpx;" class="radis margin-sm bg-white flex solids-bottom padding-tb-sm justify-between align-center">
 			<view class="margin-left text-xl">
-				<text class="cuIcon-notification"></text>
+				<text class="cuIcon-light text-blue"></text>
 				<text class="text-bold margin-lr-xs">通知公告</text>
 			</view>
-			<swiper style="height: 40rpx;width: 400rpx;" class="swiper" autoplay="true" interval="4000" duration="500" circular="true"
+			<swiper class="swiper" autoplay="true" interval="4000" duration="500" circular="true"
 			 vertical="true">
 				<swiper-item v-for="(item,index) in swiperArray" :key='index' @click="toNewsDetail(item.url)" class="text-cut">
 					{{item.text}}
 				</swiper-item>
 			</swiper>
-			<view class="margin-right text-informatic-brown" @click="navToNews">更多<text class="cuIcon-playfill"></text></view>
+			<view class="margin-right  text-" @click="navToNews">更多<text class="cuIcon-playfill"></text></view>
 		</view>
-		<view class="padding-bottom bg-white">
+		<view class="cu-list menu margin-sm">
+			<view class="cu-item padding-lg">
+				<view class="content">
+					<text class="cuIcon-global text-blue"></text>
+					<text class="text-black text-bold">校园导览</text>
+				</view>
+			</view>
+			
+			<view class="cu-item padding-lg">
+				<view class="content">
+					<text class="cuIcon-share text-blue"></text>
+					<text class="text-black text-bold">参观须知</text>
+				</view>
+			</view>
+		</view>
+		<!-- <view class="padding-bottom bg-white">
 			<view class="cu-bar bg-white">
 				<view class="action">
 					<text class="text-bold text-xl">我的</text>
@@ -52,30 +77,7 @@
 					<text>{{item.text}}</text>
 				</view>
 			</view>
-		</view>
-		<view>
-			<view class="cu-bar bg-white">
-				<view class="action">
-					<text class="text-bold text-xl">功能</text>
-				</view>
-				<view class="action text-informatic-brown" @click="functionClick">{{functionshow ? "收起" : "展开"}}<text :class="functionshow ? 'cuIcon-triangleupfill' : 'cuIcon-triangledownfill'"
-					 style="font-size:25px;"></text></view>
-			</view>
-			<view class="cu-list grid col-4 no-border" v-show="functionshow">
-				<view v-if="p(item.permission)||true" class="cu-item" v-for='(item,index) in functionList' :key='index' @click="navTo(item.source)">
-					<view>
-						<image :src="item.image" class="cu-avatar bg-white lg" mode="aspectFit"></image>
-					</view>
-					<text>{{item.text}}</text>
-				</view>
-				<view class="cu-item" @click="navTo('../News/newsList')">
-					<view class="bg-informatic-brown text-center flex align-center" style="width: 48px; height: 48px; margin: 0 auto; border-radius: 8px;">
-						<view class="cuIcon-info" style="font-size: 36px; color: #FFF;margin-top: 0px;"></view>
-					</view>
-					<text>创新实验室通知</text>
-				</view>
-			</view>
-		</view>
+		</view> -->
 		<navTab :selection='0' />
 	</view>
 </template>
@@ -88,6 +90,7 @@
 		},
 		data() {
 			return {
+				cardCur: 0,
 				swiperArray: [
 					{
 						text: "加载中",
@@ -95,48 +98,10 @@
 					}
 				],
 				swiperList: {
-					img1: "../../static/轮播图片画板1.png",
-					img2: "../../static/轮播图片画板2.png",
+					img1: "../../static/轮播图片画板1.jpg",
+					img2: "../../static/轮播图片画板2.jpg",
 					img3: "../../static/轮播图片画板3.jpg"
 				},
-				mine: [{
-						image: "../../static/我的申请.png",
-						text: "亲友入校",
-						source: "../roomApplication/v2/myApplication"
-					},
-					{
-						image: "../../static/我的待办.png",
-						text: "我的待办",
-						source: "../roomApplication/v2/todoList",
-					},
-					{
-						image: "../../static/我的参与.png",
-						text: "我的参与",
-						source: "../roomApplication/v2/myAttend",
-					},
-					{
-						image: "../../static/扫一扫.png",
-						text: "扫一扫",
-						source: "../alert/developing"
-					}
-				],
-				labList: [
-					{
-						image: "../../static/申请机位.png",
-						text: "按个人申请",
-						source: "../roomView/labList?type=20"
-					},
-					{
-						image: "../../static/实验室列表.png",
-						text: "按团队申请",
-						source: "../roomView/labList?type=10"
-					}
-					/*{
-						image: "../../static/实验室列表.png",
-						text: "基础实验室",
-						source: "../roomView/labList?type=1"
-					}*/
-				],
 				functionList: [{
 						image: "../../static/通讯录.png",
 						text: "通讯录",
@@ -169,6 +134,9 @@
 			}
 		},
 		methods: {
+			cardSwiper(e) {
+				this.cardCur = e.detail.current
+			},
 			loadNews () {
 				uni.post("/api/cms/getArticles",{ page: 1, pageSize: 5},msg=>{
 					this.swiperArray = msg.data
