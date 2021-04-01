@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<swiper class="card-swiper round-dot" :indicator-dots="true" :circular="true"
+		<!-- <swiper class="card-swiper round-dot" :indicator-dots="true" :circular="true"
 		 :autoplay="true" interval="5000" duration="500" @change="cardSwiper" indicator-color="#8799a3"
 		 indicator-active-color="#0081ff">
 			<swiper-item v-for="(item,index) in swiperList" :key="index" :class="cardCur==index?'cur':''">
@@ -8,39 +8,64 @@
 					<image :src="item" mode="aspectFill" style="width: 710rpx;"></image>
 				</view>
 			</swiper-item>
-		</swiper>
-		<!-- <swiper class="margin-sm card-swiper bg-white" autoplay="true" indicator-dots="true" indicator-active-color="white" indicator-color="grey"
+		</swiper> -->
+		<swiper class="margin-sm radius screen-swiper" autoplay="true" indicator-dots="true" indicator-active-color="white" indicator-color="grey"
 		 circular="true">
 			<swiper-item v-for='(item,index) in swiperList' :key='index'>
-				<image :src="item" mode="aspectFill" style="width: 100%;" class="radius"></image>
+				<image :src="item" mode="aspectFill" class="radius"></image>
 				<video :src="item" autoplay loop muted :show-play-btn="false" :controls="false" objectFit="cover" v-if="item.type=='video'"></video>
 			</swiper-item>
-		</swiper> -->
-		<view style="height: 100rpx;" class="radis margin-sm bg-white flex solids-bottom padding-tb-sm justify-between align-center">
+		</swiper>
+		<view style="height: 100rpx;" class="shadow radius margin-sm bg-white flex solids-bottom padding-tb-sm justify-between align-center">
 			<view class="margin-left text-xl">
 				<text class="cuIcon-light text-blue"></text>
 				<text class="text-bold margin-lr-xs">通知公告</text>
 			</view>
-			<swiper class="swiper" autoplay="true" interval="4000" duration="500" circular="true"
+			<swiper style="height: 40rpx;width: 325rpx;" class="swiper" autoplay="true" interval="4000" duration="500" circular="true"
 			 vertical="true">
 				<swiper-item v-for="(item,index) in swiperArray" :key='index' @click="toNewsDetail(item.url)" class="text-cut">
 					{{item.text}}
 				</swiper-item>
 			</swiper>
-			<view class="margin-right  text-" @click="navToNews">更多<text class="cuIcon-playfill"></text></view>
+			<view class="margin-right  text-blue" @click="navToNews">更多<text class="cuIcon-playfill"></text></view>
 		</view>
-		<view class="cu-list menu margin-sm">
-			<view class="cu-item padding-lg">
+		<view class="shadow radius cu-list menu margin-sm">
+			<view class="cu-item padding-lg my-border" @click="navTo('')">
 				<view class="content">
-					<text class="cuIcon-global text-blue"></text>
+					<text class="cuIcon-post text-blue"></text>
+					<text class="text-black text-bold">入校申请</text>
+				</view>
+			</view>
+			<view class="cu-item padding-lg my-border" @click="navTo('')">
+				<view class="content">
+					<text class="cuIcon-form text-blue"></text>
+					<text class="text-black text-bold">申请记录</text>
+				</view>
+			</view>
+			<view class="cu-item padding-lg" @click="navTo('../../pages/profile/profile')">
+				<view class="content">
+					<text class="cuIcon-profile text-blue"></text>
+					<text class="text-black text-bold">个人信息</text>
+				</view>
+			</view>
+		</view>
+		<view class="shadow radius shadow cu-list menu margin-sm">
+			<view class="cu-item padding-lg my-border" @click="navTo('')">
+				<view class="content">
+					<text class="cuIcon-location text-blue"></text>
 					<text class="text-black text-bold">校园导览</text>
 				</view>
 			</view>
-			
-			<view class="cu-item padding-lg">
+			<view class="cu-item padding-lg my-border" @click="navTo('')">
 				<view class="content">
-					<text class="cuIcon-share text-blue"></text>
+					<text class="cuIcon-info text-blue"></text>
 					<text class="text-black text-bold">参观须知</text>
+				</view>
+			</view>
+			<view class="cu-item padding-lg" @click="navTo('')">
+				<view class="content">
+					<text class="cuIcon-write text-blue"></text>
+					<text class="text-black text-bold">意见反馈</text>
 				</view>
 			</view>
 		</view>
@@ -78,7 +103,7 @@
 				</view>
 			</view>
 		</view> -->
-		<navTab :selection='0' />
+		<!-- <navTab :selection='0' /> -->
 	</view>
 </template>
 
@@ -178,5 +203,7 @@
 </script>
 
 <style lang="scss">
-
+.my-border{
+	border-bottom: 0.1rpx solid #ddd;
+}
 </style>

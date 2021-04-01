@@ -1,6 +1,6 @@
 <template> 
 	<view>
-		<cu-custom bgColor="bg-informatic-brown" isBack>
+		<cu-custom bgColor="bg-blue" isBack>
 			<block slot="backText">返回</block>
 		</cu-custom>
 		<view class="bg-white padding">

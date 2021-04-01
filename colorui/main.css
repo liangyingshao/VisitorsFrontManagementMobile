@@ -34,7 +34,7 @@ image {
 }
 
 .radius {
-	border-radius: 6upx;
+	border-radius: 20upx;
 }
 
 /* ==================
@@ -2575,7 +2575,7 @@ swiper.round-dot .uni-swiper-dot.uni-swiper-dot-active {
 }
 
 .screen-swiper {
-	min-height: 375upx;
+	min-height: 450upx;
 }
 
 .screen-swiper image,
