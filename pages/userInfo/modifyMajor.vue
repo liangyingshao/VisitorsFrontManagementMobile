@@ -1,15 +1,15 @@
 <template>
 	<view>
-		<cu-custom bgColor="bg-gradual-blue" :isBack="true">
+		<cu-custom bgColor="bg-sys-purple" :isBack="true">
 			<block slot="backText">返回</block>
 			<block slot="content">修改{{text}}</block>
 		</cu-custom>
-		<view class="margin">
+		<view class="margin margin-top-xl">
 			<view class="input-group">
-				<picker mode="selector" 
+				<picker mode="selector" style="border-radius:30px; padding: 20upx;"
 				:range="userInfo.IsStudent ? majorForStudent : majorForTeacher" 
 				@change="setMajor"
-				class="solids-bottom margin-lr padding-left-sm" style="border-radius:30px;">
+				class="solids margin-lr padding-left-sm">
 					<view class="picker">
 						{{preMajor ? preMajor : "请选择"}}
 					</view>
@@ -17,7 +17,7 @@
 			</view>
 			<view class="text-lg margin-lr-lg margin-top-xs">请选择新{{text}}</view>
 			<view class="padding flex flex-direction margin-top-lg">
-				<button class="cu-btn bg-blue lg" size="mini" type="primary" v-on:click="ModifyMajor()">保存</button>
+				<Button class="radius bg-sys-purple cu-btn lg" size="mini" type="primary" v-on:click="ModifyMajor()">保存</Button>
 			</view>
 		</view>
 	</view>

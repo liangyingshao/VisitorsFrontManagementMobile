@@ -910,6 +910,12 @@ button.cuIcon.lg {
 	font-size: 2.5em;
 }
 
+.cu-avatar.xxl {
+	width: 140upx;
+	height: 140upx;
+	font-size: 2.5em;
+}
+
 .cu-avatar .avatar-text {
 	font-size: 0.4em;
 }
@@ -2793,6 +2799,10 @@ scroll-view.cu-steps .cu-item {
 	display: flex;
 }
 
+.basis-xxs {
+	flex-basis: 10%;
+}
+
 .basis-xs {
 	flex-basis: 20%;
 }
@@ -3440,6 +3450,16 @@ scroll-view.cu-steps .cu-item {
 
 .bg-purple {
 	background-color: #6739b6;
+	color: #ffffff;
+}
+
+.bg-sys-purple {
+	background-color: #4F3F84;
+	color: #ffffff;
+}
+
+.bg-default {
+	background-color: #F1F1F1;
 	color: #ffffff;
 }
 

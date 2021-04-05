@@ -1,17 +1,17 @@
 <template>
 	<view>
-		<cu-custom bgColor="bg-gradual-blue" :isBack="true">
+		<cu-custom bgColor="bg-sys-purple" :isBack="true">
 			<block slot="backText">返回</block>
 			<block slot="content">修改邮箱</block>
 		</cu-custom>
-		<view class="margin">
+		<view class="margin margin-top-xl">
 			<view class="input-group">
-				<input class="solids-bottom margin-lr padding-left-sm" style="border-radius:30px;" focus=true :placeholder='preEmail'
+				<input class="solids margin-lr padding-left-sm" style="border-radius:30px; padding: 35upx;" focus=true :placeholder='preEmail'
 				 placeholder-class="text-lg" v-model="email">
 			</view>
 			<view class="margin-lr-lg text-lg margin-top-xs">请输入新邮箱</view>
 			<view class="padding flex flex-direction margin-top-lg">
-				<button class="cu-btn bg-blue lg" v-on:click="ModifyEamil">保存</button>
+				<button class="cu-btn bg-sys-purple lg" v-on:click="ModifyEamil">保存</button>
 			</view>
 		</view>
 	</view>

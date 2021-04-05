@@ -30,7 +30,7 @@
 			<view class="margin-right  text-blue" @click="navToNews">更多<text class="cuIcon-playfill"></text></view>
 		</view>
 		<view class="shadow radius cu-list menu margin-sm">
-			<view class="cu-item padding-lg my-border" @click="navTo('')">
+			<view class="cu-item padding-lg my-border" @click="navTo('../../pages/admissionApp/admissionApp')">
 				<view class="content">
 					<text class="cuIcon-post text-blue"></text>
 					<text class="text-black text-bold">入校申请</text>
@@ -42,7 +42,7 @@
 					<text class="text-black text-bold">申请记录</text>
 				</view>
 			</view>
-			<view class="cu-item padding-lg" @click="navTo('../../pages/profile/profile')">
+			<view class="cu-item padding-lg" @click="navTo('../../pages/userInfo/userInfo')">
 				<view class="content">
 					<text class="cuIcon-profile text-blue"></text>
 					<text class="text-black text-bold">个人信息</text>
@@ -62,10 +62,16 @@
 					<text class="text-black text-bold">参观须知</text>
 				</view>
 			</view>
-			<view class="cu-item padding-lg" @click="navTo('')">
+<!-- 			<view class="cu-item padding-lg my-border" @click="navTo('')">
 				<view class="content">
 					<text class="cuIcon-write text-blue"></text>
 					<text class="text-black text-bold">意见反馈</text>
+				</view>
+			</view> -->
+			<view class="cu-item padding-lg" @click="navTo('../../pages/index/testEntry')">
+				<view class="content">
+					<text class="cuIcon-write text-blue"></text>
+					<text class="text-black text-bold">测试入口</text>
 				</view>
 			</view>
 		</view>

@@ -10,6 +10,10 @@
 			"style": {}
 		},
 		{
+			"path":"pages/admissionApp/admissionApp",
+			"style": {}
+		},
+		{
 			"path":"pages/profile/profile",
 			"style": {}
 		},

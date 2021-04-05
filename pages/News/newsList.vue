@@ -1,6 +1,7 @@
 <template>
 	<view>
-		<cu-custom bgColor="bg-informatic-brown">
+		<cu-custom bgColor="bg-sys-purple" :isBack="true">
+			<block slot="backText">返回</block>
 			<block slot="content">通知公告</block>
 		</cu-custom>
 		<view :key="index" v-for="(item,index) in news" @click="toDetail(item.ID)">
@@ -15,7 +16,7 @@
 			</view>
 			
 		</view>
-		<navTab :selection='1' />
+		<!-- <navTab :selection='1' /> -->
 	</view>
 </template>
 
